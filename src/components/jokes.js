@@ -67,25 +67,25 @@ const Jokes = () => {
                     Chuck Norris Joke Generator
                 </Typography>
                 {loading ? <Loader />
-                    : <Grid container spacing={2}>
-                        {jokesCategory.map((card, index) => (
-                            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                                <Card
-                                    style={{ cursor: 'pointer ' }}
-                                    sx={{ '&:hover': { boxShadow: 3 } }}
-                                    onClick={() => { selectCard(card) }}
-                                >
-                                    <CardContent>
-                                        <Typography variant="h6" component="div">
-                                            {card.toUpperCase()}
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>}
-
-                {selectedCategory.id && <Box mt={4} sx={{ p: 2, border: '1px dashed grey' }}>
+                    : <>
+                        <Grid container spacing={2}>
+                            {jokesCategory.map((card, index) => (
+                                <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                                    <Card
+                                        style={{ cursor: 'pointer ' }}
+                                        sx={{ '&:hover': { boxShadow: 3 } }}
+                                        onClick={() => { selectCard(card) }}
+                                    >
+                                        <CardContent>
+                                            <Typography variant="h6" component="div">
+                                                {card.toUpperCase()}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
+                        {selectedCategory.id && <Box mt={4} sx={{ p: 2, border: '1px dashed grey' }}>
                     <Typography variant="h5" gutterBottom>
                         {selectedCategory.categories.map((category) => (
                             <Chip
@@ -100,10 +100,15 @@ const Jokes = () => {
                     <Typography variant="body1">
                         {selectedCategory.value}
                     </Typography>
-                </Box>}
+                </Box>
+                }
                 <Box mt={4}>
                     <Button variant="contained" onClick={resetForNewJoke}>Reset</Button>
                 </Box>
+                    </>
+                }
+
+               
 
 
             </Container>
