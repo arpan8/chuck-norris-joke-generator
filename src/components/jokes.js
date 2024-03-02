@@ -86,29 +86,29 @@ const Jokes = () => {
                             ))}
                         </Grid>
                         {selectedCategory.id && <Box mt={4} sx={{ p: 2, border: '1px dashed grey' }}>
-                    <Typography variant="h5" gutterBottom>
-                        {selectedCategory.categories.map((category) => (
-                            <Chip
-                                label={category.toUpperCase()}
-                                color="primary"
-                                sx={{
-                                    borderRadius: '4px'
-                                }}
-                            />
-                        ))}
-                    </Typography>
-                    <Typography variant="body1">
-                        {selectedCategory.value}
-                    </Typography>
-                </Box>
-                }
-                <Box mt={4}>
-                    <Button variant="contained" onClick={resetForNewJoke}>Reset</Button>
-                </Box>
+                            <Typography variant="h5" gutterBottom>
+                                {selectedCategory.categories.map((category) => (
+                                    <Chip
+                                        label={category.toUpperCase()}
+                                        color="primary"
+                                        sx={{
+                                            borderRadius: '4px'
+                                        }}
+                                    />
+                                ))}
+                            </Typography>
+                            <Typography variant="body1">
+                                {selectedCategory.value}
+                            </Typography>
+                        </Box>
+                        }
+                        <Box mt={4}>
+                            <Button variant="contained" onClick={resetForNewJoke}>Reset</Button>
+                        </Box>
                     </>
                 }
 
-               
+
 
 
             </Container>
